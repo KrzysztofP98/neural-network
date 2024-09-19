@@ -12,36 +12,37 @@ The program initializes random weights for two weight matrices and processes the
 
 ### Components of the Code
 
-Sigmoid Activation Function: The sigmoid function is used as the activation function. It introduces non-linearity to the network and squashes the output between 0 and 1.
+##### Sigmoid Activation Function: 
+The sigmoid function is used as the activation function. It introduces non-linearity to the network and squashes the output between 0 and 1.
 
-```
-def sigmoid(x):
-    return 1 / (1 + np.exp(-x))```
+    def sigmoid(x):
+        return 1 / (1 + np.exp(-x))
 
-Input Vector: The input vector x is initialized with 4 elements randomly sampled from a uniform distribution between 0.1 and 0.9. The shape of the input vector is (1, 4).
+##### Input Vector: 
+The input vector x is initialized with 4 elements randomly sampled from a uniform distribution between 0.1 and 0.9. The shape of the input vector is (1, 4).
 
 `x = np.random.uniform(low=0.1, high=0.9, size=(1, 4))`
 
-Weight Matrices:
+##### Weight Matrices:
 
 W1: The weight matrix between the input layer and the hidden layer is initialized with random values sampled from a normal distribution. The shape of W1 is (3, 4), meaning there are 3 hidden layer neurons and 4 input neurons.
 
 W2: The weight matrix between the hidden layer and the output layer is initialized similarly, with a shape of (3, 3) for 3 output neurons and 3 hidden layer neurons.
 
-```W1 = np.random.normal(loc=0, scale=1.5, size=(3, 4))
-W2 = np.random.normal(loc=0, scale=1.3, size=(3, 3))```
+    W1 = np.random.normal(loc=0, scale=1.5, size=(3, 4))
+    W2 = np.random.normal(loc=0, scale=1.3, size=(3, 3))
 
-Forward Propagation:
+##### Forward Propagation:
 
 Hidden Layer Activations: The dot product between the input vector x and the transpose of the weight matrix W1 is calculated. This produces a (1, 3) matrix, which is passed through the sigmoid function to produce the hidden layer activations z2.
 
-```z = np.dot(x, W1.transpose())
-z2 = sigmoid(z)```
+    z = np.dot(x, W1.transpose())
+    z2 = sigmoid(z)
 
 Output Layer Activations: The dot product of the hidden layer activations z2 and the weight matrix W2 is computed, followed by applying the sigmoid function to produce the final output o.
 
-```z3 = np.dot(z2, W2)
-o = sigmoid(z3)```
+    z3 = np.dot(z2, W2)
+    o = sigmoid(z3)
 
 ### Print Statements:
 
@@ -53,10 +54,10 @@ The program prints the following:
 
 This helps you understand how the input is propagated through the network and transformed by the weights at each layer.
 
-```print("\ninput layer: \nvector:\n", x, "\n")
-print("\nhidden layer: \nweight matrix number 1:\n", W1, "\n")
-print("weight matrix number 2:\n", W2, "\n")
-print("\nexit layer: \noutput:\n", o)```
+    print("\ninput layer: \nvector:\n", x, "\n")
+    print("\nhidden layer: \nweight matrix number 1:\n", W1, "\n")
+    print("weight matrix number 2:\n", W2, "\n")
+    print("\nexit layer: \noutput:\n", o)
 
 ### How the Network Works
 
@@ -68,12 +69,12 @@ print("\nexit layer: \noutput:\n", o)```
 
 Install NumPy if you haven't already:
 
-`pip install numpy`
+    pip install numpy
 
 Copy and paste the code into a Python script (e.g., neural_network.py).
 Run the script using Python:
 
-`python neural_network.py`
+    python neural_network.py
 
 ### Example Output
 
