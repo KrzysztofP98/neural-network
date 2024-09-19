@@ -4,17 +4,18 @@
 
 This program demonstrates a simple feedforward neural network model using Python and NumPy. It features the following structure:
 
-    Input Layer: 4 input neurons
-    Hidden Layer: 3 neurons
-    Output Layer: 3 neurons
+- Input Layer: 4 input neurons
+- Hidden Layer: 3 neurons
+- Output Layer: 3 neurons
 
 The program initializes random weights for two weight matrices and processes the input through the network using the sigmoid activation function. Below is a detailed explanation of each part of the code.
-Components of the Code
+
+### Components of the Code
 
 Sigmoid Activation Function: The sigmoid function is used as the activation function. It introduces non-linearity to the network and squashes the output between 0 and 1.
 
-
-```def sigmoid(x):
+```
+def sigmoid(x):
     return 1 / (1 + np.exp(-x))```
 
 Input Vector: The input vector x is initialized with 4 elements randomly sampled from a uniform distribution between 0.1 and 0.9. The shape of the input vector is (1, 4).
